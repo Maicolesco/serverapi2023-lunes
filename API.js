@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import { rutas } from './routes/rutas.js'
 
 export class API {
@@ -12,6 +13,7 @@ export class API {
         )
     }
     enrutarPeticiones(){
+        this.app.use(cors())
        this.app.use('/',rutas)
     }
     conectarConBD(){}
